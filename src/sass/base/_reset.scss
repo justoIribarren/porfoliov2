@@ -1,0 +1,105 @@
+@import '../abstracts/variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  &::selection{
+    background-color: $bg-inv;
+    color: $font-inv;
+  }
+}
+
+body {
+  transition: background-color .3s cubic-bezier(.7, 0, .3, 1);
+  overflow: hidden;
+  position: relative;
+  background-color: $bg;
+  color: $font;
+}
+
+a {
+  color: $font;
+  text-decoration: none;
+  outline: none;
+}
+
+ul{
+  list-style: none;
+}
+
+h1, a {
+  line-height: 24px;
+  font-weight: 400;
+  font-size: .875rem;
+  cursor: pointer;
+}
+h2{
+  font-weight: 400;
+  font-size: 6rem;
+  line-height: 100%;
+  color: $font;
+}
+h3{
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 100%;
+  color: $font;
+}
+h4{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: $font-1;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid $bg-inv;
+  color: $font;
+  border-radius: 30px;
+  outline: none
+}
+
+label{
+  transition: all .3s cubic-bezier(.7, 0, .3, 1);
+  font-size: 20px;
+  height: 30px;
+  padding-top: 5px;
+}
+input, textarea{
+  resize: none;
+  padding: 15px 0;
+  outline: none;
+  border: none;
+  color: $font;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+textarea{
+  margin-bottom: 20px;
+}
+
+.not-empty{
+  font-size: 18px;
+  color: $font-1;
+}
+
+input::placeholder, textarea::placeholder{
+  color: $font-1;
+}
+
+section{
+  height: 100vh;
+  padding: 70px 0;
+}

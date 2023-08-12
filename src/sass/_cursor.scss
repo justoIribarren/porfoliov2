@@ -1,0 +1,33 @@
+@use './abstracts/mixins';
+@import './abstracts/variables';
+
+.cursor {display: none}
+
+@media screen and (min-width: 1020px){
+  .cursor {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    contain: layout style size;
+    pointer-events: none;
+    display: block;
+    &-media {
+      display: block;
+      width: 576px;
+      height: 324px;
+      border-radius: 100%;
+      transform: scale(0);
+      margin: -162px 0 0 -288px;
+      position: relative;
+      opacity: .7;
+      img {
+        width: 576px;
+        height: 324px;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute
+      }
+    }
+  }
+}

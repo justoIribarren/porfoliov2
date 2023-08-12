@@ -1,0 +1,25 @@
+
+[data-theme="light"]{
+  --bg: #eeecda;
+  --font: #000000;
+  --font-1: #0F0F0F60;
+  --bg-inv: #0c0c0c;
+  --font-inv: #e9e9e9 ;
+  --font-inv-1: #ffffff60;
+}
+
+[data-theme="dark"]{
+  --bg: #0c0c0c;
+  --font: #e9e9e9;
+  --font-1: #ffffff60;
+  --bg-inv: #eeecda;
+  --font-inv: #000000;
+  --font-inv-1: #0F0F0F60;
+}
+
+$bg: var(--bg);
+$font: var(--font);
+$font-1: var(--font-1);
+$bg-inv: var(--bg-inv);
+$font-inv: var(--font-inv);
+$font-inv-1: var(--font-inv-1);

@@ -1,0 +1,65 @@
+@use './abstracts/mixins';
+@import './abstracts/variables';
+
+.header{
+  position: absolute;
+  width: 100%;
+  padding: 0 70px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  &__wrapper{
+    @include mixins.flex(center, space-between, row);
+    position: relative;
+    height: 60px;
+  }
+  &__settings{
+    @include mixins.flex(center, space-between, row);
+    gap: 50px;
+    &--button{
+      @include mixins.flex(center, space-between, row);
+      gap: 20px;
+      position: relative;
+    }
+  }
+
+  .button-mode{
+    position: absolute;
+    display: none;
+    &__active{
+      display: block
+    }
+  }
+  .button-languaje__active{color: $font-1}
+  &__nav{
+    a{font-size: 14px}
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+  }
+  button{
+    transition: color .3s;
+    &:hover{color: $font-1}
+    border: none
+  }
+  .section-div{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .hover-border {
+    transition: all .3s;
+    position: relative;
+    background-color: $bg-inv;
+    width: 0%;
+  }
+  li:hover .hover-border{
+    width: 100%;
+  }
+  .header__logo:hover .hover-border{
+    width: 100%;
+  }
+}

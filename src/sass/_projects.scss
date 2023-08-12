@@ -1,0 +1,36 @@
+@use './abstracts/mixins';
+@import './abstracts/variables';
+
+.projects-item{
+	@include mixins.flex(center, center, column);
+	cursor: pointer;
+	position: relative;
+	transition: all .3s ease-out;
+	width: 100%;
+	border-bottom: 3px solid $bg-inv;
+	
+	&__content{
+		@include mixins.flex(center, space-between, row);
+		padding: 50px 70px;
+		width: 100%
+	}
+	span{
+		transition: all .3s cubic-bezier(.7, 0, .3, 1);
+		color: inherit;
+		font-size: 50px;
+		text-align: start;		
+		min-width: 350px
+	}
+	.task{
+		transition: all .3s cubic-bezier(.7, 0, .3, 1);
+		min-width: 200px;
+		text-align: end
+	}
+	.date{
+		transition: all .3s cubic-bezier(.7, 0, .3, 1);
+		min-width: 100px;
+		text-align: center	
+	}
+
+	&__content:hover{.task, .date, span{color: $font-1}}
+}

@@ -1,0 +1,35 @@
+@use './abstracts/mixins';
+@import './abstracts/variables';
+
+.hero__text{
+  padding: 0 70px;
+  &-1{
+    padding-top: 50px;
+    margin-top: -50px;
+    overflow: hidden;
+    align-self: start;  
+    h2{font-size: 4rem}
+    span{
+      margin-left: 30px;
+      font-size: 9.375rem;
+      font-weight: 500;
+    }
+  }
+  &-2, &-3{
+    @include mixins.flex(end, space-between, row);
+    padding: 20px 70px 15px;
+    margin: -10px 0;
+    overflow: hidden;
+    h2{line-height: 0.9}
+    p{
+      font-size: 14px;
+      padding-bottom: 5px;
+    }
+    span{
+      font-size: 12px;
+      font-weight: 300;
+    }
+    text-align: right; 
+  }
+  #edition, #scroll-down{text-align:left}
+}

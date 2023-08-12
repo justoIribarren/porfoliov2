@@ -1,0 +1,155 @@
+@use './abstracts/mixins';
+@import './abstracts/variables';
+
+.sidebar{
+  @include mixins.flex(center, center, column);
+  position: fixed;  
+  height: 100%;
+  width: 100%;
+  padding: 40px 70px 0;
+  z-index: 1000;
+  background-color: $bg-inv;
+  overflow: hidden;
+  transition: background-color .3s cubic-bezier(.7, 0, .3, 1);
+
+  &-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 70px;
+    height: 60px;
+    color: $font-inv;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    &__logo{overflow: hidden}
+  }
+
+  &__main{
+    @include mixins.flex(center, space-evenly, row);
+    width: 65%;
+  }
+
+  &__section--content{
+    overflow: hidden;
+    color: $font-inv-1;
+    p{transition: all .3s}
+  }
+  &__section{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+  &__section--content a{
+    overflow: hidden;
+    color: inherit;
+    font-weight: 300;
+    font-size: 75px;
+    line-height: .9;
+  }
+  &__sec-info{
+    @include mixins.flex(end, space-between, column);
+    width: 100%;
+    height: 100%
+  }
+  
+  &__settings{
+    @include mixins.flex(end, center, column);
+    gap: 10px;
+    button{
+      transition: color .3s;
+      &:hover{color: $font-inv-1}
+      border: none
+    }
+    &--button{
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: end;
+      gap: 20px;
+      color: $font-inv;
+      overflow: hidden;
+    }
+    .button-languaje{color: $font-inv}
+    .button-languaje__active{color: $font-inv-1}
+    .button-mode{
+      color: $font-inv;
+      display: none;
+      &__active{display: block}
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 5px;
+    &--content{overflow: hidden}
+    .hover-border{
+      width: 100%;
+      background-color: $bg;
+      height: 2px;
+    }
+    .hover-border::after{
+      transition: width .3s;
+      content: '';
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      background-color: $bg-inv
+    }
+    li:hover .hover-border::after{width: 0}
+    a{color: $font-inv}
+  }
+}
+
+.sidebar-button{
+  @include mixins.flex(center, center, row);
+  position: fixed;
+  top: 10px;
+  right: 70px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 1px solid $bg-inv;
+  z-index: 1100;
+  cursor: pointer;
+  transform: scale(0);
+  transition: transform .3s, border-color .3s;  
+  &__show{transform: scale(1)}
+  
+  span{
+    height: 1px;
+    width: 20px;
+    display: inline-block;
+    background-color: $bg-inv;
+    position: absolute;
+    transform: translateY(3px);
+    transition: transform .3s, background-color .3s;
+    &::before{
+      content: '';
+      position: absolute;
+      display: inline-block;
+      height: 1px;
+      background-color: $bg-inv;
+      transform: translateY(-6px);
+      width: 20px;
+      transition: transform .3s, background-color .3s
+    } 
+  }
+  &:hover span{transform: translateY(6px)}
+  &:hover span::before{transform: translateY(-11px)}
+  
+  &__active {
+    border-color: $bg;
+    span{
+      background-color: $bg;
+      transform: rotate(45deg)}
+    span::before{
+      background-color: $bg;
+      transform: rotate(-90deg)}
+    &:hover span{transform: translateY(0) rotate(135deg)}
+    &:hover span::before{transform: translateY(0px) rotate(-90deg)}
+  }
+}

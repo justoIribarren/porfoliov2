@@ -1,0 +1,54 @@
+@use './abstracts/mixins';
+@import './abstracts/variables';
+
+.contact{
+	display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  &__form{
+    margin-right: 100px;
+    &--container{
+      padding: 35px 70px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      &:first-child{
+        padding-top: 0;
+      }
+    }
+    .section-div{
+      margin: 0;
+    }
+    .submit{
+      background-color: $bg;
+      position: absolute;
+      width: 150px;
+    }
+    &--number{
+      position: absolute;
+      right: 0;
+      font-weight: 300;
+    }
+    #last{top: 50px}
+  }
+
+  &__details{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 25px;
+    font-size: 14px;
+    &--social{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    &--social li{position: relative}
+    .email-copied{
+      opacity: 0;
+      position: absolute;
+      top: 2px;
+      left: 70px
+    }
+  }
+}
